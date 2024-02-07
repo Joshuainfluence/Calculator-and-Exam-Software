@@ -1,0 +1,205 @@
+@media (max-width: 40rem) {
+  .previews {
+    width: 100%;
+    display: block;
+    height: 850px;
+    /* flex-direction: column; */
+  }
+  .first-row {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    height: 400px;
+    display: block;
+  }
+  .second-row {
+    width: 100%;
+    margin-top: 2%;
+    margin-left: 0;
+    margin-right: 0;
+    height: 500px;
+  }
+
+  /* navigation bar */
+  .content1 {
+    flex-direction: column;
+    position: fixed;
+    align-items: start;
+    inset: 0 0 0 0%;
+    --gap: 2em;
+    padding: min(30vh, 10rem) 3rem;
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+    backdrop-filter: blur(2rem);
+  }
+  .content1[data-visible="true"] {
+    transform: translateX(0%);
+  }
+  .mobile-nav-toggle {
+    position: absolute;
+    display: block;
+    color: red;
+    background: red;
+    width: 2rem;
+    border: 0;
+    aspect-ratio: 1;
+    top: 1rem;
+    right: 2rem;
+    z-index: 9999;
+  }
+  .mobile-nav-toggle[aria-expanded="true"] {
+    background: green;
+  }
+  .logo {
+    width: 100%;
+    z-index: 9999;
+  }
+  .topics {
+    width: 100%;
+    height: auto;
+    /* display: block; */
+    /* justify-content: center; */
+    margin-top: 2rem;
+    margin-left: 0;
+  }
+  .first-topic {
+    width: 100%;
+    /* margin-bottom: 2rem; */
+    /* position: absolute; */
+    height: auto;
+    /* margin-top: 100%; */
+  }
+  /* .density a {
+    font-size: 15px;
+  } */
+  /* .density {
+    width: 200px;
+    background: #800080;
+    margin-top: 1rem;
+    height: 40px;
+    border: 1px solid #800080;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  } */
+
+  .density{
+    width: 50%;
+    background: #800;
+    /* margin-top: 1rem; */
+    height: 165px;
+    border: 1px solid #800;
+    /* border-radius: 1rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .quadratic{
+    width: 50%;
+    background: #ff0000;
+    /* margin-top: 1rem; */
+    height: 165px;
+    border: 1px solid #ff0000;
+    /* border-radius: 1rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .quadratic a{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+  }
+  .scientific{
+    width: 50%;
+    background: #ffa500;
+    /* margin-top: 1rem; */
+    height: 165px;
+    border: 1px solid #ffa500;
+    /* border-radius: 1rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .scientific:hover{
+    background:#800080 ;
+  }
+  .scientific a{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+  }
+  .standard{
+    width: 50%;
+    background: #0000ff;
+    /* margin-top: 1rem; */
+    height: 165px;
+    border: 1px solid #0000ff;
+    /* border-radius: 1rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .standard a{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+  }
+  .pythagoras{
+    width: 50%;
+    background: #008000;
+    /* margin-top: 1rem; */
+    height: 165px;
+    border: 1px solid #008000;
+    /* border-radius: 1rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .pythagoras a{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+  }
+  .exam{
+    width: 50%;
+    background: #000;
+    /* margin-top: 1rem; */
+    height: 165px;
+    border: 1px solid #000;
+    /* border-radius: 1rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .exam a{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+  }
+  .marque {
+    margin-top: 3rem;
+  }
+}

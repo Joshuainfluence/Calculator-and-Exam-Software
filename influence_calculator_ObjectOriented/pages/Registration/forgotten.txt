@@ -1,0 +1,1 @@
+for the forgotten password the user  will have to reenter his or her email address and a verification code will be sent to him or her email address and when the code is confirmed true, then the user inputs a new password which will be updated in the database and boom it's all done

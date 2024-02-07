@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    /* font-family: sans-serif; */
+    font-size: 20px;
+  }
+  section{
+    position: absolute;
+    margin-top: 6rem;
+    width: 100%;
+  }
+  .value-container{
+    width: 70%;
+    margin-left: 15%;
+  }
+ 
+
+  @media (max-width:40rem) {
+    .value-container{
+      width: 90%;
+      margin-left: 5%;
+    }
+   
+  }

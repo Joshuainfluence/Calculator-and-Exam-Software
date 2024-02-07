@@ -1,0 +1,37 @@
+@keyframes influence {
+    0%{
+      background-image: url(../image/hacker2.jpg);
+    }
+    25%{
+      background-image: url(../image/download.jpeg);
+    }
+    50%{
+      background-image: url(../image/download\ \(1\).jpeg);
+    }
+    75%{
+        background-image:url(../image/download\ \(2\).jpeg);
+    }
+    100%{
+        background-image: url(../image/download\ \(3\).jpeg);
+    }
+  }
+  @keyframes density {
+    0%{
+      margin-top: 100%;
+    }
+  }
+  @keyframes quadratic {
+    0%{
+      margin-left: 100%;
+    }
+  }
+  @keyframes scientific {
+   0%{
+    margin-right: 100%;
+   } 
+  }
+  @keyframes exam {
+    0%{
+      margin-right: 100%;
+    }
+  }

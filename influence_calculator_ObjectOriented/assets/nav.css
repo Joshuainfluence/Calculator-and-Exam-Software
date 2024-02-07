@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.nav-content {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    border: 0px solid blue;
+    border-inline-start-style: dashed;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    width: 30%;
+    border: 0px solid red;
+    display: flex;
+
+  }
+  .title {
+    width: 100%;
+    font-weight: 600;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "consolas";
+  }
+  .content {
+    width: 60%;
+    height: 100%;
+    border: 0px solid green;
+    align-items: center;
+  }
+  .image {
+    width: 50%;
+    height: 100%;
+  }
+  .content1{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2%;
+    /* font-family:  'Noto Sans JP', sans-serif; */
+    font-weight: lighter;
+    display: flex;
+  }
+  li {
+    list-style: none;
+  }
+  li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #483d8b;
+  }
+  li a:hover{
+    color: #800080;
+    /* background: #ff0000; */
+    /* border: 1px solid red; */
+  }
+  .flex {
+    display: flex;
+  }
+  header {
+    position: fixed;
+    background: #fff;
+    width: 100%;
+    /* z-index is for the write-ups to be forward */
+    z-index: 9999;
+    box-shadow: 10px 10px 10px grey;
+   
+   
+    border: 0px solid black;
+  }
+  /* display the mobile toggler none */
+.mobile-nav-toggle{
+  display: none;
+}
+
+  @media (max-width:40rem) {
+
+
+    /* navigation bar */
+    .content1{
+        flex-direction: column;
+        position: fixed;
+        align-items: start;
+        inset: 0 0 0 0%;
+        --gap:2em;
+        padding: min(30vh, 10rem) 3rem;
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+        backdrop-filter: blur(2rem);
+    }
+    .content1[data-visible="true"]{
+        transform: translateX(0%);
+    }
+    .mobile-nav-toggle{
+        position: absolute;
+        display: block;
+        color: red;
+        background: red;
+        width: 2rem;
+        border: 0;
+        aspect-ratio: 1;
+        top: 1rem;
+        right: 2rem;
+        z-index: 9999;
+    }
+    .mobile-nav-toggle[aria-expanded="true"]{
+        background: green;
+    }
+    .logo{
+        width: 100%;
+        z-index: 9999;
+    }
+}

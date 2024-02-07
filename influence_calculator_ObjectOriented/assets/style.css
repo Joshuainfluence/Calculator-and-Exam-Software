@@ -1,0 +1,327 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  width: 100%;
+}
+.nav-content {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  border: 0px solid blue;
+  border-inline-start-style: dashed;
+  justify-content: space-between;
+}
+.logo {
+  width: 30%;
+  border: 0px solid red;
+  display: flex;
+}
+.title {
+  width: 100%;
+  font-weight: 600;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "consolas";
+}
+.content {
+  width: 60%;
+  height: 100%;
+  border: 0px solid green;
+  align-items: center;
+}
+.image {
+  width: 50%;
+  height: 100%;
+}
+.content1{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2%;
+  /* font-family:  'Noto Sans JP', sans-serif; */
+  font-weight: lighter;
+  display: flex;
+}
+li {
+  list-style: none;
+}
+li a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #483d8b;
+}
+li a:hover{
+  color: #800080;
+  /* background: #ff0000; */
+  /* border: 1px solid red; */
+}
+.flex {
+  display: flex;
+}
+header {
+  position: fixed;
+  background: #fff;
+  width: 100%;
+  /* z-index is for the write-ups to be forward */
+  z-index: 9999;
+  box-shadow: 10px 10px 10px grey;
+ 
+ 
+  border: 0px solid black;
+}
+section {
+  /* set 'em to position absolute because the header on position fixed */
+  width: 100%;
+  position: absolute;
+  margin-top: 7%;
+  font-weight: lighter;
+  /* height: 100vh; */
+}
+.letter {
+  font-weight: lighter;
+}
+/* display the mobile toggler none */
+.mobile-nav-toggle{
+  display: none;
+}
+
+
+/* section styling */
+.previews {
+  width: 100%;
+  height: 500px;
+  /* border: 1px solid green; */
+  display: flex;
+  margin-top: 2%;
+  background: #fff;
+  
+}
+.first-row{
+    height: auto;
+    width: 45%;
+    /* border: 1px solid green; */
+    /* border-radius: 10%; */
+    background: linear-gradient(red, blue, red);
+    box-shadow: 5px 5px 5px 5px grey;
+    filter: blur(0px);
+    opacity: 100%;
+    background-image: url(../image/hacker2.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+    animation: 10s influence linear infinite;
+}
+
+.second-row{
+    /* height: 400px; */
+    width: 43%;
+    border: 0px solid blue;
+    margin-left: 5%;
+    margin-right: 2%;
+    display: flex;
+    height: auto;
+    margin-top: 0;
+}
+
+.topics{
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid red; */
+  width: 100%;
+  margin-left: 5%;
+  margin-top: 0rem;
+  /* justify-content: space-between; */
+  background: #fff;
+  box-shadow: -7px 7px 7px 7px grey;
+  border-radius: 5px;
+}
+.first-topic{
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  width: 100%;
+  margin-top: 0;
+  /* border: 1px solid green; */
+  
+  
+}
+.second-topic{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  /* border: 1px solid green; */
+  background: #fff;
+  box-shadow: -10px 10px 10px 10px grey;
+  border-radius: 5px;
+  
+}
+.density a{
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+}
+.density{
+  width: 50%;
+  background: #800;
+  /* margin-top: 1rem; */
+  height: 165px;
+  border: 1px solid #800;
+  /* border-radius: 1rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  animation: 3s density;
+}
+.quadratic{
+  width: 50%;
+  background: #ff0000;
+  /* margin-top: 1rem; */
+  height: 165px;
+  border: 1px solid #ff0000;
+  /* border-radius: 1rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  animation: 3s quadratic;
+}
+.quadratic a{
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+}
+.scientific{
+  width: 50%;
+  background: #ffa500;
+  /* margin-top: 1rem; */
+  height: 165px;
+  border: 1px solid #ffa500;
+  /* border-radius: 1rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  animation: 3s scientific;
+}
+.scientific a{
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+}
+.scientific:hover{
+  background:#800080 ;
+  border: 1px solid #800080;
+}
+.density:hover{
+  background:#800080 ;
+  border: 1px solid #800080;
+}
+.standard:hover{
+  background:#800080 ;
+  border: 1px solid #800080;
+}
+.quadratic:hover{
+  background:#800080 ;
+  border: 1px solid #800080;
+}
+.pythagoras:hover{
+  background:#800080 ;
+  border: 1px solid #800080;
+}
+.exam:hover{
+  background:#800080 ;
+  border: 1px solid #800080;
+}
+.standard{
+  width: 50%;
+  background: #0000ff;
+  /* margin-top: 1rem; */
+  height: 165px;
+  border: 1px solid #0000ff;
+  /* border-radius: 1rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.standard a{
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+}
+.pythagoras{
+  width: 50%;
+  background: #008000;
+  /* margin-top: 1rem; */
+  height: 165px;
+  border: 1px solid #008000;
+  /* border-radius: 1rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.pythagoras a{
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+}
+.exam{
+  width: 50%;
+  background: #000;
+  /* margin-top: 1rem; */
+  height: 165px;
+  border: 1px solid #000;
+  /* border-radius: 1rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  animation: 3s exam;
+}
+.exam a{
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+}
+.marque{
+  width: 90%;
+  margin-left: 5%;
+  color: #800080;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  margin-top: 2rem;
+}
+footer{
+  width: 100%;
+  /* margin-top: 80%;
+  position: absolute; */
+  display: flex;
+  align-items: center;
+  justify-content: center ;
+  font-size: 15px;
+}
