@@ -17,6 +17,8 @@ require_once __DIR__ . "/../config/session.php";
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="quadratic.css">
     <link rel="stylesheet" href="../../assets/home.css">
+    <link rel="stylesheet" href="../../assets/bootstrap/bootstrap5.min.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" integrity="sha512-QQgIkRHu+Hgj4yV9z6k6KNlVBd6BZ/4iMf5gsGt74/KU9iXylugz6NT0P7/4Lo1uyzddq8DPKfo4FJwGc3lmZA==" crossorigin="anonymous"></script>
 </head>
 
