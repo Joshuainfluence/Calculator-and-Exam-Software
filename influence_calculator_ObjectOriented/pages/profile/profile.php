@@ -136,7 +136,7 @@ require_once __DIR__ . "/../../config/dbh.php";
                         </div>
                         <div class="text-start">
                             <div class="border position-relative" style="width: 10rem; margin-top: -60px; height: 10rem; border-radius: 100%; overflow: hidden">
-                                <img src="../includes/profileUploads/<?= $ministry['profileImage'] ?>" class="w-100 h-100" style="object-fit: cover;">
+                                <img src="../../inc/profileUploads/<?= $ministry['profileImage'] ?>" class="w-100 h-100" style="object-fit: cover;">
                             </div>
                         </div>
                         <div class="text-center mt-3">

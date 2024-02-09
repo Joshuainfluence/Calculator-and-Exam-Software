@@ -12,6 +12,7 @@ require_once __DIR__. "/config/session.php";
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="assets/animation.css">
     <link rel="stylesheet" href="assets/font_awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/bootstrap/bootstrap5.min.css">
     <link rel="stylesheet" href="assets/media_query.css">
     <!-- <script src="nav.js" defer></script> -->
     <script src="assets/nav.js" defer></script>
@@ -47,6 +48,7 @@ require_once __DIR__. "/config/session.php";
                                 ?>
                                     <a href="pages/profile/profile.php"><i class="fa fa-user-circle"></i></a>
                                     <div class="it"><?php echo ucfirst($_SESSION['username'])?></div>
+                                    <a href="config/logout.php">Logout <i class="fa fa-sign-in"></i></a>
                                 <?php
                                 } else {
                                 ?>

@@ -29,7 +29,7 @@ require_once __DIR__ . "/../config/session.php";
                 <div class="nav-content">
                     <div class="logo">
                         <!-- <img src="image/hacker2.jpg" class="image" alt=""> -->
-                        <div class="title">Influence Calculator</div>
+                        <div class="title">InfluenceTechie</div>
                     </div>
                     <button class="mobile-nav-toggle" aria-expanded="false" aria-controls=".content"></button>
                     <div class="content">
@@ -51,6 +51,7 @@ require_once __DIR__ . "/../config/session.php";
                                 if (isset($_SESSION['id'])) {
                                 ?>
                                     <a href="../profile/profile.php"><i class="fa fa-user-circle"></i></a>
+                                    <a href="../config/logout.php">Logout <i class="fa fa-sign-in"></i></a>
                                 <?php
                                 } else {
                                 ?>

@@ -10,7 +10,7 @@ $rows = $rows->displayProfile();
 
 require_once __DIR__ . "/../../public/userexamquestion.classes.php";
 require_once __DIR__ . "/../../public/userexamquestion.contr.php";
-$x = 2;
+$x = $_GET['id'];
 $questions = new UserExamQuestionContr($x);
 $questions = $questions->displayexamquestion();
 
@@ -59,7 +59,8 @@ date_default_timezone_set("Africa/Lagos");
                 <!-- setting a unique id from the start button -->
 
                 <!-- Setting the start button to an id of one -->
-                <a href="examhome.php?id=<?= $x ?>" class="btn btn-primary">start</a>
+                <a href="examhome.php?id=2" class="btn btn-primary">start</a>
+                
                 <?php if (isset($_SESSION['error'])) : ?>
                     <div class="alert alert-danger"><?= $_SESSION['error'] ?></div>
                 <?php endif ?>
@@ -69,13 +70,15 @@ date_default_timezone_set("Africa/Lagos");
                 $time = date("H:i:s");
                 // the id is set so one from the start value, which is the beginning of the counting from the database
                 foreach ($questions as $question) :
-
+                    $x = $_GET['id'];
 
                 ?>
 
                     <div class="form-control mt-3">
-                        <form action="valued.php" method="post">
+                        <form action="next.php" method="post">
                             <?= $time ?>
+                            <input type="hidden" name="id" value="<?= $question['id']?>">
+
                             <div class="question fw-600 fs-5">
                                 <?= ucfirst($question['question']) ?>
                             </div>
