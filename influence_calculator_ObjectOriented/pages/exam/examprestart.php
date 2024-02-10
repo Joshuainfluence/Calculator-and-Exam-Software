@@ -55,7 +55,7 @@ $rows = $rows->displayProfile();
                                         </tr>
                                         
                                         <tr class="mt-3">
-                                            <td><a href="examhome.php" class="btn btn-success btn-lg mt-4">Start Now</a></td>
+                                            <td><a href="examhome.php?id=2" class="btn btn-success btn-lg mt-4">Start Now</a></td>
                                         </tr>
                                     </table>
                                 </div>

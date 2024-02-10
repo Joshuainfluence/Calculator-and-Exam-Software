@@ -25,7 +25,7 @@ require_once __DIR__. "/config/session.php";
                 <div class="nav-content">
                     <div class="logo">
                         <!-- <img src="image/hacker2.jpg" class="image" alt=""> -->
-                        <div class="title">Influence Calculator</div>
+                        <div class="title">InfluenceTechie</div>
                     </div>
                     <button class="mobile-nav-toggle" aria-expanded="false" aria-controls=".content"></button>
                     <div class="content">
@@ -85,7 +85,7 @@ require_once __DIR__. "/config/session.php";
     <section>
         <div class="big-container">
             <div class="marque">
-                <marquee behavior="lhs" direction="lhs">This is Influence calculating Device and Exam software. When registered, you will be emailed your registration number  and note that password is a very important criterion in registration.</marquee>
+                <!-- <marquee behavior="lhs" direction="lhs">This is Influence calculating Device and Exam software. When registered, you will be emailed your registration number  and note that password is a very important criterion in registration.</marquee> -->
             </div>
             <div class="previews">
                 <div class="first-row">

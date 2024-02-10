@@ -8,9 +8,14 @@ $questionid = $_POST['id'];
 $user_ans = $_POST['ans'];
 $rows = new UserExamQuestionContr($questionid);
 $rows = $rows->displayexamquestion();
-
+$submit = $_POST['submit'];
 $userid = $_SESSION['id'];
 
+
+if (isset($submit)) {
+    $_SESSION['end'] = true;
+    header("location: examhome.php?id=false");
+}
 
 if (!empty($user_ans)) {
     foreach ($rows as $row) {
@@ -31,3 +36,5 @@ if (!empty($user_ans)) {
 } else {
     echo "fields cannot be empty";
 }
+
+

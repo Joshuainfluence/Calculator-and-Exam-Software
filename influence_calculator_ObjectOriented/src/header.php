@@ -51,7 +51,7 @@ require_once __DIR__ . "/../config/session.php";
                                 if (isset($_SESSION['id'])) {
                                 ?>
                                     <a href="../profile/profile.php"><i class="fa fa-user-circle"></i></a>
-                                    <a href="../config/logout.php">Logout <i class="fa fa-sign-in"></i></a>
+                                    <a href="../../config/logout.php">Logout <i class="fa fa-sign-in"></i></a>
                                 <?php
                                 } else {
                                 ?>

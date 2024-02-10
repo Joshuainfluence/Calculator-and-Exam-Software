@@ -286,95 +286,8 @@ require_once __DIR__ . "/../../config/dbh.php";
                                 }
                             }
                         </style>
-                        <table class="table table-responsive">
-                            <thead>
-                                <tr>
-                                    <!-- <th scope="row">S/N</th> -->
-                                    <th scope="row">Name</th>
-                                    <th scope="row">Date</th>
-                                    <th scope="row">Image</th>
-                                    <th scope="row">Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                require_once __DIR__ . "/../config/dbh.php";
-                                require_once __DIR__ . "/../cart/cart.classes.php";
-                                require_once __DIR__ . "/../cart/cart-checkContr.php";
-                                $userId = $_SESSION['id'];
-                                $display = new CartCheckContr($userId);
-                                $rows1 = $display->cartChecker($userId);
-                                ?>
-                                <?php
-                                foreach ($rows1 as $row1) :
-                                ?>
-                                    <tr>
-
-                                        <td><?= $row1['product_name']; ?></td>
-                                        <td><?= $row1['date_added']; ?></td>
-                                        <td><img style="width:80px; height:80px;" src="../admin/uploads/<?= $row1['product_image']; ?>" alt=""></td>
-                                        <!-- we are getting the id, so as to use it for deleting -->
-                                        <td><a href="../cart/DeleteCart.inc.php?id=<?= $row1['id']; ?>" class="btn btn-default-alt btn-del"><i class="fa fa-trash"></i></a></td>
-                                    </tr>
-
-                                <?php endforeach ?>
-                            </tbody>
-                        </table>
-                        <?php if (isset($_GET['m'])) : ?>
-                            <div class="flash-data" data-flashdata="<?= $_GET['m']; ?>"></div>
-                        <?php endif ?>
-                        <script src="../assets/sweetalert/jquery-3.6.4.min.js"></script>
-                        <script src="../assets/sweetalert/sweetalert2.all.min.js"></script>
-                        <script>
-                            $('.btn-del').on('click', function(e) {
-                                e.preventDefault();
-                                const href = $(this).attr('href')
-
-                                Swal.fire({
-                                    title: 'Are you sure?',
-                                    text: 'Product will be deleted from cart',
-                                    icon: 'warning',
-                                    showCancelButton: true,
-                                    confirmButtonColor: '#3085d6',
-                                    cancelButtonColor: '#d33',
-                                    confirmButtonText: 'Delete Record',
-                                }).then((result) => {
-                                    if (result.value) {
-                                        document.location.href = href;
-                                    }
-
-                                })
-                            })
-                            const flashdata = $('.flash-data').data('flashdata')
-                            if (flashdata) {
-                                Swal.fire({
-                                    icon: 'success',
-                                    title: 'Record Deleted',
-                                    text: 'Product has been deleted from cart successfully'
-                                })
-
-                            }
-                        </script>
-                        <!-- <div class="buttons">
-                            <a href="" class="button-cart">Cart</a>
-                            <a href="" class="button-cart ms-3">Edit</a>
-                        </div> -->
-
-                        <?php
-                        if (count($rows1, COUNT_NORMAL) == 0) {
-
-                        ?>
-                            <p>You have not ordered any Product yet!</p>
-                        <?php
-                        } else {
-                        ?>
-                            <div class="d-flex justify-content-center">
-                                <a href="../cart/checkout.php" class="btn btn-default-alt btn-lg mb-3">Proceed to Checkout</a>
-                            </div>
-                        <?php
-                        }
-
-                        ?>
+                        
+                       
                     </div>
                     <div class="card-footer">
                         <!-- <label for="happy">
@@ -463,18 +376,23 @@ require_once __DIR__ . "/../../config/dbh.php";
                                 </div>
                             </div>
                             <?php
-                            foreach ($rows as $row) :
+                            require_once __DIR__. "/../../public/adminviewusers.classes.php";
+                            require_once __DIR__. "/../../public/adminviewusers.contr.php";
+                            $is_admin = 0;
+                            $friends = new AdminViewUsersContr($is_admin);
+                            $friends = $friends->userView();
+                            foreach ($friends as $friend) :
                             ?>
 
 
                                 <div class="col-md-3 carousel-item">
                                     <div class="card" style="width: 100%;">
                                         <div class="w-100" style="height: 19rem;">
-                                            <img src="../includes/profileUploads/<?= $row['profileImage'] ?>" style="width:16rem; height:19rem; object-fit:cover">
+                                            <img src="../../inc/profileUploads/<?= $friend['profileImage'] ?>" style="width:16rem; height:19rem; object-fit:cover">
                                         </div>
                                         <div class="card-body">
-                                            <p class="card-title text-center fw-bold fs-4"><?= strtoupper($row['fullName']) ?></p>
-                                            <h5 class="fs-5"><?= ucfirst($row['username']) ?></h5>
+                                            <p class="card-title text-center fw-bold fs-4"><?= strtoupper($friend['fullName']) ?></p>
+                                            <h5 class="fs-5"><?= ucfirst($friend['username']) ?></h5>
 
                                             <div class="buttons">
                                                 <a href="my_stupid_friends.html" class="button-cart"> <i class="fa fa-eye-slash"></i><a>
@@ -504,7 +422,7 @@ require_once __DIR__ . "/../../config/dbh.php";
                     <div class="card-body d-flex">
                         <div class="col-4 card" style="width: 10rem; border-radius: 17px; ">
                             <div class="pics">
-                                <img src="../includes/profileUploads/<?= $ministry['profileImage'] ?>" style="width: 100%; height:10rem;" class="card-img-top" alt="...">
+                                <img src="../../inc/profileUploads/<?= $ministry['profileImage'] ?>" style="width: 100%; height:10rem;" class="card-img-top" alt="...">
                             </div>
                             <div class="font position-relative text-primary" style="margin-top: -20px;">
                                 <a href="create_story.html"><i class="fa fa-plus-circle fa-3x bg-light rounded-circle"></i></a>
