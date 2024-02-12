@@ -21,14 +21,17 @@ require_once __DIR__ . "/../../config/dbh.php";
 
 ?>
 <style>
+    .container-fluid{
+        background-image: linear-gradient(white, white, white);
+    }
     .card {
-        border: none;
+        border: 1px solid grey;
 
         position: relative;
         overflow: hidden;
         border-radius: 8px;
         cursor: pointer;
-        background-image: linear-gradient(grey, pink);
+        background-image: linear-gradient(white, white, white);
     }
 
     .card:before {
@@ -245,9 +248,9 @@ require_once __DIR__ . "/../../config/dbh.php";
 
         <!-- <div class="container-fluid"> -->
         <div class="row rowed">
-            <div class="col-sm-12 col-md-12 col-lg-12 mt-5          ">
+            <div class="col-sm-12 col-md-12 col-lg-12 mt-5">
                 <!-- <div class="col-12"> -->
-                <h4 class="fw-bold text-light text-center">Ordered Products</h4>
+                <h4 class="fw-bold text-dark text-center">Exam results</h4>
                 <div class="card table-responsive">
 
                     <div class="card-body">
@@ -286,7 +289,39 @@ require_once __DIR__ . "/../../config/dbh.php";
                                 }
                             }
                         </style>
-                        
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="" class="btn btn-primary btn-lg">Start Exam Quiz</a>
+                                <table class="table table-bordered mt-3">
+                                    <tr>
+                                        <th>
+                                            Course
+                                        </th>
+                                        <th>
+                                            Status
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Html
+                                        </td>
+                                        <td>Not taken</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Css
+                                        </td>
+                                        <td>Not taken</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Javascript
+                                        </td>
+                                        <td>Not taken</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
                        
                     </div>
                     <div class="card-footer">
@@ -361,7 +396,7 @@ require_once __DIR__ . "/../../config/dbh.php";
                             <div class="col-md-3 carousel-item active">
                                 <div class="card" style="width: 100%;">
                                     <div class="w-100" style="height: 19rem;">
-                                        <img src="../img/6556e5fb45239eedd9b5427160b007de.jpg" style="width:16rem; height:19rem; object-fit:cover">
+                                        <img src="../../image/download (1).jpeg" style="width:16rem; height:19rem; object-fit:cover">
                                     </div>
                                     <!-- <img src="../image/hack.jpg" class="card-img-top" alt="..."> -->
                                     <div class="card-body">
@@ -460,11 +495,9 @@ require_once __DIR__ . "/../../config/dbh.php";
         </div>
     </div>
 
-    <script src="../bootstrap/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/bootstrap/bootstrap.js"></script>
 
-    <?php
-    require_once "../footer.php";
-    ?>
+
 </section>
 
 </body>
