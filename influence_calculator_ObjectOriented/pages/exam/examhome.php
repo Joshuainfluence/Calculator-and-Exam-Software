@@ -226,7 +226,7 @@ date_default_timezone_set("Africa/Lagos");
 
                     <a href="../profile/result.php" class="btn btn-outline-primary">Check Score</a>
                 <?php
-                    unset($_SESSION['end']);
+                    
                 } else {
 
                 ?>

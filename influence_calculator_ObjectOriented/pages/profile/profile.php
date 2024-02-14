@@ -291,7 +291,7 @@ require_once __DIR__ . "/../../config/dbh.php";
                         </style>
                         <div class="row">
                             <div class="col-12">
-                                <a href="" class="btn btn-primary btn-lg">Start Exam Quiz</a>
+                                <a href="../exam/examlogin.php" class="btn btn-primary btn-lg">Start Exam Quiz</a>
                                 <table class="table table-bordered mt-3">
                                     <tr>
                                         <th>

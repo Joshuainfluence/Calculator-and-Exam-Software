@@ -15,6 +15,14 @@ class UserExamQuestionContr extends UserExamQuestion{
 
         return $this->examquestiondisplay($this->x);
     }
+
+    public function displayexamanswer(){
+        if ($this->x == 0) {
+            exit();
+        }
+
+        return $this->examanswerdisplay($this->x);
+    }
 }
 
 class UserAddExamAnswerContr extends UserExamQuestion{
