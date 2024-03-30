@@ -5,10 +5,10 @@ require_once __DIR__ . "/../../config/dbh.php";
 require_once __DIR__ . "/../../config/session.php";
 
 $questionid = $_POST['id'];
-$user_ans = $_POST['ans'];
+$user_ans = isset( $_POST['ans']);
 $rows = new UserExamQuestionContr($questionid);
 $rows = $rows->displayexamquestion();
-$submit = $_POST['submit'];
+$submit = isset($_POST['submit']);
 $userid = $_SESSION['id'];
 
 

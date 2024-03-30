@@ -72,7 +72,8 @@ date_default_timezone_set("Africa/Lagos");
                 <?php endif ?>
 
                 <?php
-                if ($x != 6 && isset($_SESSION['on'])) {
+                $questionNumbers = count($questions, COUNT_NORMAL);
+                if ($x != $questionNumbers && isset($_SESSION['on'])) {
 
                 ?>
                     <?php
@@ -86,7 +87,7 @@ date_default_timezone_set("Africa/Lagos");
                     ?>
 
                         <div class="form-control mt-3">
-                            <form action="next.php" method="post">
+                            <form action="previous.php" method="post">
                                 <?= $time ?>
                                 <input type="hidden" name="id" value="<?= $question['id'] ?>">
 
@@ -113,6 +114,7 @@ date_default_timezone_set("Africa/Lagos");
                                     <label for="d"><?= ucfirst($question['optionD']) ?></label>
                                 </div>
                                 <div class="form-control d-flex justify-content-between">
+                                    <input type="submit" class="btn btn-success btn-lg" name="previous" value="Previous">
                                     <input type="submit" class="btn btn-success btn-lg" name="next" value="Next">
                                     <input type="submit" name="submit" class="submit btn btn-danger" value="Submit">
                                 </div>
@@ -206,7 +208,7 @@ date_default_timezone_set("Africa/Lagos");
                             confirmButtonText: 'Delete Record',
                         }).then((result) => {
                             if (result.value) {
-                                document.location.href = "examhome.php?id=<?= $x?>";
+                                document.location.href = "examhome.php?id=<?= $x ?>";
                             }
 
                         })
@@ -218,7 +220,7 @@ date_default_timezone_set("Africa/Lagos");
                                 title: 'Record Deleted',
                                 text: 'User has been deleted successfully',
 
-                                
+
 
                             })
                         }
@@ -226,7 +228,7 @@ date_default_timezone_set("Africa/Lagos");
 
                     <a href="../profile/result.php" class="btn btn-outline-primary">Check Score</a>
                 <?php
-                    
+
                 } else {
 
                 ?>
@@ -241,20 +243,20 @@ date_default_timezone_set("Africa/Lagos");
 
                                 // Swal.fire("Success", "Your exam has successfully been submitted", "success");
                                 Swal.fire({
-                                icon: 'success',
-                                title: 'Exam Submitted',
-                                text: 'Exam submitted successfully',
-                                confirmButtonColor: '#3085d6',
-                                cancelButtonColor: '#d33',
-                                confirmButtonText: 'View result',
-                            }).then((result) => {
-                                if (result.value) {
-                                    document.location.href = "afterexam.php";
-                                }
+                                    icon: 'success',
+                                    title: 'Exam Submitted',
+                                    text: 'Exam submitted successfully',
+                                    confirmButtonColor: '#3085d6',
+                                    cancelButtonColor: '#d33',
+                                    confirmButtonText: 'View result',
+                                }).then((result) => {
+                                    if (result.value) {
+                                        document.location.href = "afterexam.php";
+                                    }
 
-                                
 
-                            })
+
+                                })
 
 
                             };

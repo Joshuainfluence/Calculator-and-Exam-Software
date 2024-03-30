@@ -7,6 +7,7 @@ require_once __DIR__ . "/../public/adminexamquestion.contr.php";
 $x = 0;
 $rows = new AdminShowQuestionContr($x);
 $rows = $rows->questionShow();
+$category = $_GET['id'];
 
 ?>
 
@@ -19,6 +20,7 @@ $rows = $rows->questionShow();
         joshuajulius2030@gmail.com <img src="../img/IMG-20230409-WA0055.jpg" class="img-fluid rounded-circle" width="30" alt="">
     </div>
     <h6>User details</h6>
+    <h6><?= $category?></h6>
     <div class="card table-responsive">
         <!-- <div class="card-header w-100">
                         user details
@@ -32,8 +34,9 @@ $rows = $rows->questionShow();
             <?php endif ?>
             <div class="form-group mb-3">
                 <label for="">Enter Question</label><br>
-                <form action="../inc/adminexamquestion.include.php" method="POST">
+                <form action="../inc/adminexamquestion.include.php?id=<?= $category?>" method="POST">
                     <h4><input type="text" name="question" id="input-button"></h4>
+                    <input type="hidden" name="category" value="<?= $category?>">
                     a. <input type="text" name="optionA" id="input-button">
                     b. <input type="text" name="optionB" id="input-button">
                     c. <input type="text" name="optionC" id="input-button">
@@ -62,9 +65,10 @@ $rows = $rows->questionShow();
                 foreach ($rows as $row) :
                 ?>
                     <div class="form-control">
+                        <h5>Question category: <?= $row['category']?></h5>
                         <?= $row['question'] ?>
                         <div class="first">
-                            a. <input type="radio" name="a" id="a1" value="a"> <label for="a1"><?= $row['optionA'] ?></label> 
+                            a. <input type="radio" name="a" id="a1" value="a"> <label for="a1"><?= $row['optionA'] ?></label>
 
                         </div>
                         <div class="second">
@@ -94,9 +98,6 @@ $rows = $rows->questionShow();
 
     </div>
 </div>
-</div>
-</div>
-</body>
-
-</html>
-<?php unset($_SESSION['error'], $_SESSION['success']) ?>
+<?php 
+require_once __DIR__. "/adminFooter.php"
+?>

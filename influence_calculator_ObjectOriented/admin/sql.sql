@@ -7,3 +7,5 @@ CREATE TABLE exam(
     optionD varchar(128) not null,
     ans varchar(128) not null    
 );
+
+ALTER TABLE user ADD COLUMN course DEFAULT "none"

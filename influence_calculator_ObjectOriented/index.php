@@ -47,7 +47,7 @@ require_once __DIR__. "/config/session.php";
                                 if (isset($_SESSION['id'])) {
                                 ?>
                                     <a href="pages/profile/profile.php"><i class="fa fa-user-circle"></i></a>
-                                    <div class="it"><?php echo ucfirst($_SESSION['username'])?></div>
+                                    <!-- <div class="it"><?php echo ucfirst($_SESSION['username'])?></div> -->
                                     <a href="config/logout.php">Logout <i class="fa fa-sign-in"></i></a>
                                 <?php
                                 } else {

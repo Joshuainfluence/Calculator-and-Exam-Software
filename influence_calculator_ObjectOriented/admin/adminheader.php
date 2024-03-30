@@ -80,7 +80,7 @@
                         <p><a href="admin.php" class="text-decoration-none"> View Users</a></p>
 
                         <p><a href="" class="text-decoration-none">Academics</a></p>
-                        <p><a href="exam_question.php" class="text-decoration-none">Exam Questions</a></p>
+                        <p><a href="examQuestionCategory.php" class="text-decoration-none">Exam Questions</a></p>
                         <p><a href="../config/logout.php" ; class="text-decoration-none">Logout</a></p>
                     </div>
                 </div>

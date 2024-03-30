@@ -7,9 +7,9 @@ class AdminExamQuestionContr extends AdminExamQuestion{
     private $optionC;
     private $optionD;
     private $ans;
-    
+    private $category;
 
-    public function __construct($question, $optionA, $optionB, $optionC, $optionD, $ans)
+    public function __construct($question, $optionA, $optionB, $optionC, $optionD, $ans, $category)
     {
         $this->question = $question;
         $this->optionA = $optionA;
@@ -17,6 +17,7 @@ class AdminExamQuestionContr extends AdminExamQuestion{
         $this->optionC = $optionC;
         $this->optionD = $optionD;
         $this->ans = $ans;
+        $this->category = $category;
         
     }
 
@@ -38,7 +39,7 @@ class AdminExamQuestionContr extends AdminExamQuestion{
             header("Location: ../admin/exam_question.php?emptyfields");
         }
 
-        $this->addQuestion($this->question, $this->optionA, $this->optionB, $this->optionC, $this->optionD, $this->ans);
+        $this->addQuestion($this->question, $this->optionA, $this->optionB, $this->optionC, $this->optionD, $this->ans, $this->category);
         $this->set_message("success", "Question added successfully");
         header("Location: ../admin/exam_question.php?questionaddedsuccessfully");
     }

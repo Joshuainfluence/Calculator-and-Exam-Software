@@ -1,0 +1,4 @@
+to select course to take for exam, the exam table should have a column named course, before the admin set questions he has to select the course he want to add question to. Then on the exam table the course column should have the course selected.
+
+then when users want to login for exam with their reg no and password, they will have to select the course they want to take, then a select query will be executed to select all from exams where course is equal that course. We can also store the course title in a session just incase.
+
