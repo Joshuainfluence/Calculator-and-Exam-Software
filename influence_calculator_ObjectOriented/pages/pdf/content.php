@@ -9,7 +9,7 @@ $d = $_GET['id'];
 $rows = new ProfileContr($d);
 $rows = $rows->displayProfile();
 
-$c = "<h1>Influence Techie Exam Certificate</h1>";
+$c = "<h1>Influence W.E.H Exam Certificate</h1>";
 
 
 
@@ -51,7 +51,7 @@ $c = "<h1>Influence Techie Exam Certificate</h1>";
                     align-items: center;
                 }
             </style>
-            <?= $d ?>
+
 
             <br>
             <style>
@@ -70,12 +70,12 @@ $c = "<h1>Influence Techie Exam Certificate</h1>";
                     /* border: 1px solid blue; */
                 }
 
-               .text {
-                
+                .text {
+
                     line-height: 1;
                     font-size: 2rem;
                     font-weight: lighter;
-                    font-family:Georgia, 'Times New Roman', Times, serif;
+                    font-family: Georgia, 'Times New Roman', Times, serif;
                 }
 
                 table {
@@ -88,11 +88,11 @@ $c = "<h1>Influence Techie Exam Certificate</h1>";
 
                 td {
                     width: 50%;
-                   
+
                 }
             </style>
             <div class="row">
-                
+
                 <div class="col">
 
 
@@ -105,12 +105,27 @@ $c = "<h1>Influence Techie Exam Certificate</h1>";
                                 <h4 class="text">Name: <?= ucfirst($row['fullName']) ?></h4>
                                 <h4 class="text">Registration Number: <?= ucfirst($row['regNo']) ?></h4>
                                 <h4 class="text">Username: <?= ucfirst($row['username']) ?></h4>
-                                <h4 class="text">Course: <?= ucfirst($row['fullName']) ?></h4>
+                                <!-- <h4 class="text">Course: <? //= ucfirst($row['fullName']) 
+                                                                ?></h4> -->
                             </td>
 
                         </tr>
 
+
                     </table>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h1>Dear Dumbass, <span>You failed!.</span> <br> So there is basically no result upload for you.
+                        <br>Best of luck in your next Exam.
+                        <style>
+                            span {
+                                color: #ff0000;
+                            }
+                        </style>
+                    </h1>
 
                 </div>
             </div>

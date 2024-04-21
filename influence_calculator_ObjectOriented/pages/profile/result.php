@@ -10,12 +10,43 @@ $rows = $rows->displayexamanswer();
 ?>
 
 <section>
-    <div class="container-fluid  mt-5">
+    <div class="container-fluid mt-5">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 d-flex justify-content-between mb-3">
 
-                <h4 class="text-muted text-center">Dear <?= ucfirst($_SESSION['username']) ?> your result for your last exam is below</h4>
+                <h5 class="text-muted text-center p-fixed">Dear <?= ucfirst($_SESSION['username']) ?> your result for your last exam is below</h5>
+                <div class="pdf">
+                    <a href="../pdf/index.php?id=<?= $x ?>" class="button">Print <i class="fa fa-download"></i></a>
+                    <style>
+                        a {
+                            text-decoration: none;
+                            color: #fff;
+                        }
+                        a:hover{
+                            color: #fff;
+                        }
 
+                        .pdf {
+                            display: flex;
+
+                            justify-content: center;
+                            align-items: center;
+                            width: 100px;
+                            height: 50px;
+                            border: 1px solid #000;
+                            background-color: #000;
+                            color: #fff;
+                            transition: 0.3s ease-in;
+                        }
+
+                        .pdf:hover {
+                            cursor: pointer;
+                            color: red;
+                            background-color: red;
+                            border: 1px solid #ff0000;
+                        }
+                    </style>
+                </div>
             </div>
             <div class="col-12">
                 <!-- <div class="card table-responsive">
@@ -78,9 +109,7 @@ $rows = $rows->displayexamanswer();
                         <?php endforeach ?>
                     </tbody>
                 </table>
-                <div class="pdf">
-                    <a href="../pdf/index.php?id=<?= $x ?>" class="btn btn-secondary">Print Pdf</a>
-                </div>
+
                 <!-- </div>
                 </div> -->
             </div>

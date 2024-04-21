@@ -38,8 +38,8 @@
   .mobile-nav-toggle {
     position: absolute;
     display: block;
-    color: red;
-    background: red;
+    /* color: red; */
+    background: transparent;
     width: 2rem;
     border: 0;
     aspect-ratio: 1;
@@ -50,6 +50,29 @@
   .mobile-nav-toggle[aria-expanded="true"] {
     background: green;
   }
+
+  .hamburger-top,
+    .hamburger-middle,
+    .hamburger-bottom {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 24px;
+        height: 2px;
+        background: #000;
+        transform: rotate(0);
+        transition: all 0.5s;
+    }
+
+    .hamburger-middle {
+        transform: translateY(7px);
+    }
+
+
+    .hamburger-bottom {
+        transform: translateY(14px);
+    }
+
   .logo {
     width: 100%;
     z-index: 9999;

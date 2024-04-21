@@ -19,7 +19,7 @@ $rows = $rows->userView();
         joshuajulius2030@gmail.com <img src="../img/IMG-20230409-WA0055.jpg" class="img-fluid rounded-circle" width="30" alt="">
     </div>
     <h6>User details</h6>
-    <div class="card table-responsive">
+    <div class="card table-responsive shadow">
         <!-- <div class="card-header w-100">
                         user details
                     </div> -->

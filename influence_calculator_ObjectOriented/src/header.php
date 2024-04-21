@@ -31,7 +31,11 @@ require_once __DIR__ . "/../config/session.php";
                         <!-- <img src="image/hacker2.jpg" class="image" alt=""> -->
                         <div class="title">InfluenceTechie</div>
                     </div>
-                    <button class="mobile-nav-toggle" aria-expanded="false" aria-controls=".content"></button>
+                    <button class="mobile-nav-toggle" aria-expanded="false" aria-controls=".content">
+                        <span class="hamburger-top"></span>
+                        <span class="hamburger-middle"></span>
+                        <span class="hamburger-bottom"></span>
+                    </button>
                     <div class="content">
                         <ul class="content1" id="content" data-visible="false">
                             <li>
@@ -61,7 +65,7 @@ require_once __DIR__ . "/../config/session.php";
 
                                 ?>
                             </li>
-                            
+
                         </ul>
                     </div>
                 </div>

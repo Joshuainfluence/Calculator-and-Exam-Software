@@ -1,5 +1,5 @@
-<?php 
-require_once __DIR__. "/config/session.php";
+<?php
+require_once __DIR__ . "/config/session.php";
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +27,11 @@ require_once __DIR__. "/config/session.php";
                         <!-- <img src="image/hacker2.jpg" class="image" alt=""> -->
                         <div class="title">InfluenceTechie</div>
                     </div>
-                    <button class="mobile-nav-toggle" aria-expanded="false" aria-controls=".content"></button>
+                    <button class="mobile-nav-toggle" aria-expanded="false" aria-controls=".content">
+                        <span class="hamburger-top"></span>
+                        <span class="hamburger-middle"></span>
+                        <span class="hamburger-bottom"></span>
+                    </button>
                     <div class="content">
                         <ul class="content1" id="content" data-visible="false">
                             <li>
@@ -47,7 +51,7 @@ require_once __DIR__. "/config/session.php";
                                 if (isset($_SESSION['id'])) {
                                 ?>
                                     <a href="pages/profile/profile.php"><i class="fa fa-user-circle"></i></a>
-                                    <!-- <div class="it"><?php echo ucfirst($_SESSION['username'])?></div> -->
+                                    <!-- <div class="it"><?php echo ucfirst($_SESSION['username']) ?></div> -->
                                     <a href="config/logout.php">Logout <i class="fa fa-sign-in"></i></a>
                                 <?php
                                 } else {
@@ -59,7 +63,7 @@ require_once __DIR__. "/config/session.php";
                                 ?>
                             </li>
                             <style>
-                                li .it{
+                                li .it {
                                     width: 100px;
                                     border: 2px solid red;
                                     background-color: red;
@@ -71,7 +75,8 @@ require_once __DIR__. "/config/session.php";
                                     position: absolute;
                                     margin-left: -30px;
                                 }
-                                li .user a:hover .it{
+
+                                li .user a:hover .it {
                                     visibility: visible;
                                     opacity: 1;
                                 }
@@ -91,7 +96,7 @@ require_once __DIR__. "/config/session.php";
                 <div class="first-row">
 
                 </div>
-                <div class="second-row">         
+                <div class="second-row">
                     <div class="topics">
                         <div class="first-topic">
                             <div class="density">
@@ -99,7 +104,7 @@ require_once __DIR__. "/config/session.php";
                             </div>
                             <div class="quadratic">
                                 <a href="pages/quadratic/quadratic.php">Quadratic Equation</a>
-                            </div>                          
+                            </div>
                         </div>
                         <div class="first-topic">
                             <div class="scientific">
@@ -107,7 +112,7 @@ require_once __DIR__. "/config/session.php";
                             </div>
                             <div class="standard">
                                 <a href="pages/statistics/index.php">Statistics <i class="fa fa-bar-chart" aria-hidden="true"></i></a>
-                            </div>                          
+                            </div>
                         </div>
                         <div class="first-topic">
                             <div class="pythagoras">
@@ -115,14 +120,14 @@ require_once __DIR__. "/config/session.php";
                             </div>
                             <div class="exam">
                                 <a href="pages/exam/examlogin.php">Exam quiz</a>
-                            </div>                          
+                            </div>
                         </div>
-                       
-                       
+
+
                     </div>
                 </div>
             </div>
-           
+
         </div>
     </section>
 

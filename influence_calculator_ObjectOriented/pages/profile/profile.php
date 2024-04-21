@@ -25,7 +25,7 @@ require_once __DIR__ . "/../../config/dbh.php";
         background-image: linear-gradient(white, white, white);
     }
     .card {
-        border: 1px solid grey;
+        /* border: 1px solid grey; */
 
         position: relative;
         overflow: hidden;
@@ -130,8 +130,8 @@ require_once __DIR__ . "/../../config/dbh.php";
             <?php
             foreach ($administry as $ministry) :
             ?>
-                <div class="col-sm-12 col-md-9 col-lg-9 bg-light">
-                    <div class="card p-3 py-4">
+                <div class="col-sm-12 col-md-9 col-lg-9 bg-light ">
+                    <div class="card p-3 py-4 shadow">
                         <div class="d-flex justify-content-center w-100">
                             <div class="d-flex border w-100" style="height: 25rem; width:100%;">
                                 <img src="../../inc/profileUploads/<?= $ministry['profileImage'] ?>" class="w-100 h-100" style="object-fit: cover;">
@@ -197,7 +197,7 @@ require_once __DIR__ . "/../../config/dbh.php";
                 </div>
             <?php endforeach ?>
 
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
                 <div class="fashion">
                     <h2 class="text-light fw-bold fs-5">Photo Gallery</h2>
                 </div>
@@ -227,7 +227,7 @@ require_once __DIR__ . "/../../config/dbh.php";
                         <img src="../img/8a792f1973e2b85be4d123cb50503890.jpg" class="w-100 h-100" style="object-fit: cover;">
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
             <!-- for the other -->
@@ -363,7 +363,7 @@ require_once __DIR__ . "/../../config/dbh.php";
                 <style>
                     .friends-container {
                         /* background-color: #fff; */
-                        background-image: linear-gradient(grey, pink);
+                        /* background-image: linear-gradient(grey, pink); */
                         border-radius: 15px;
                         width: 25rem;
                         height: 33rem;
