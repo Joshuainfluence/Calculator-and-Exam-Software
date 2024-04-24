@@ -71,8 +71,8 @@ header {
   width: 100%;
   /* z-index is for the write-ups to be forward */
   z-index: 9999;
-  box-shadow: 10px 10px 10px grey;
- 
+  /* box-shadow: 10px 10px 10px grey; */
+  box-shadow:0 .5rem 1rem rgba(0,0,0,.15)!important;
  
   border: 0px solid black;
 }
@@ -109,7 +109,8 @@ section {
     /* border: 1px solid green; */
     /* border-radius: 10%; */
     background: linear-gradient(red, blue, red);
-    box-shadow: 5px 5px 5px 5px grey;
+    /* box-shadow: 5px 5px 5px 5px grey; */
+    box-shadow:0 .5rem 1rem rgba(0,0,0,.15)!important;
     filter: blur(0px);
     opacity: 100%;
     background-image: url(../image/hacker2.jpg);
@@ -140,7 +141,8 @@ section {
   margin-top: 0rem;
   /* justify-content: space-between; */
   background: #fff;
-  box-shadow: -7px 7px 7px 7px grey;
+  /* box-shadow: -7px 7px 7px 7px grey; */
+  box-shadow:0 .5rem 1rem rgba(0,0,0,.15)!important;
   border-radius: 5px;
 }
 .first-topic{

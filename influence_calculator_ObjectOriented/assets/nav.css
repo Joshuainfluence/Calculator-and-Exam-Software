@@ -70,8 +70,9 @@
     width: 100%;
     /* z-index is for the write-ups to be forward */
     z-index: 9999;
-    box-shadow: 10px 10px 10px grey;
-   
+    /* box-shadow: 10px 10px 10px grey; */
+    /* box-shadow:0 0 0 1px #fff,0 0 0 .25rem rgba(13,110,253,.25); */
+    box-shadow:0 .5rem 1rem rgba(0,0,0,.15)!important;
    
     border: 0px solid black;
   }

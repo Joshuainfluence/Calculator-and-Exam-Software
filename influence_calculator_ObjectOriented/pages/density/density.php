@@ -13,7 +13,7 @@ require_once __DIR__. "/../../src/header.php";
             <div id="errorAlert" class="error-alert">
                 
             </div>
-            <div class="inputs">
+            <div class="inputs shadow">
                 <div id="overlay"></div>
                 <div id="content">
                     

@@ -9,8 +9,8 @@ require_once __DIR__ . "/../../src/header.php";
             Quadratic Equation
         </div>
 
-        <div class="inputs">
-        <div id="overlay"></div>
+        <div class="inputs shadow">
+            <div id="overlay"></div>
             <div class="equation">
                 <label for="equation">Type your question</label>
                 <textarea name="text" id="question" cols="30" rows="10" class="form-control"></textarea>
