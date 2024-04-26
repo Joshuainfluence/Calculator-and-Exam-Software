@@ -85,19 +85,19 @@ date_default_timezone_set("Africa/Lagos");
                                     <input type="hidden" name="id" value="<?= $question['id'] ?>">
                                 </div>
                                 <div class="question fw-400 fs-5">
-                                    a. <input type="radio" name="ans" id="a" value="a">
+                                    a. <input type="radio" name="ans[]" id="a" value="a">
                                     <label for="a"><?= ucfirst($question['optionA']) ?></label>
                                 </div>
                                 <div class="question fw-400 fs-5">
-                                    b. <input type="radio" name="ans" id="b" value="b">
+                                    b. <input type="radio" name="ans[]" id="b" value="b">
                                     <label for="b"><?= ucfirst($question['optionB']) ?></label>
                                 </div>
                                 <div class="question fw-400 fs-5">
-                                    c. <input type="radio" name="ans" id="c" value="c">
+                                    c. <input type="radio" name="ans[]" id="c" value="c">
                                     <label for="c"><?= ucfirst($question['optionC']) ?></label>
                                 </div>
                                 <div class="question fw-400 fs-5">
-                                    d. <input type="radio" name="ans" id="d" value="d">
+                                    d. <input type="radio" name="ans[]" id="d" value="d">
                                     <label for="d"><?= ucfirst($question['optionD']) ?></label>
                                 </div>
                                 <!-- <div class="form-group d-flex justify-content-between mt-5 mb-2">

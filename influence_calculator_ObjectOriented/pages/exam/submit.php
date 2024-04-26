@@ -9,7 +9,7 @@ require_once __DIR__ . "/../../config/session.php";
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     // 
     $questionid = $_POST['id'];
-    $user_ans = isset($_POST['ans']);
+    $user_ans = isset($_POST['ans[]']);
     $rows = new UserExamQuestionContr($questionid);
     $rows = $rows->displayexamquestion();
     $userid = $_SESSION['id'];
@@ -21,11 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $optionC = $row['optionC'];
         $optionD = $row['optionD'];
         $isCorrect = ($user_ans === $correct_ans) ? "correct" : "wrong";
-
-
-        $insert = new UserAddExamAnswerContr($questionid, $question, $optionA, $optionB, $optionC, $optionD, $correct_ans, $userid, $user_ans, $isCorrect);
-        $insert = $insert->useranswerAdd();
-
-        header("Location: ../profile/result.php");
     }
+
+    $insert = new UserAddExamAnswerContr($questionid, $question, $optionA, $optionB, $optionC, $optionD, $correct_ans, $userid, $user_ans, $isCorrect);
+    $insert = $insert->useranswerAdd();
+    header("Location: ../profile/result.php");
 }

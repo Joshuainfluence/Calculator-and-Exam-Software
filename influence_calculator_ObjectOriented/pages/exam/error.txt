@@ -1,0 +1,7 @@
+the issues i am facing now in my exam software project is that the when i click the next or prrvious button, the page is reloaded and the answer i have selected with the the radio button is wiped off
+so i want to create it such that if i select an answer and click the next button, the answer will still remains even if i come back to the question it should be showing the selected answer i clicked before
+and the problem i am facing too is that the useranswer is not being inserted to the database, for comparism to take place so i can know if it matches the set answer in the database
+
+
+another question
+how can i apply joining tables in sql to an exam software i am building

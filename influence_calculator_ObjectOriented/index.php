@@ -19,7 +19,7 @@ require_once __DIR__ . "/config/session.php";
 </head>
 
 <body>
-    <header class="primary-header">
+    <header class="primary-header shadow">
         <nav>
             <div class="container">
                 <div class="nav-content">
@@ -28,9 +28,9 @@ require_once __DIR__ . "/config/session.php";
                         <div class="title">InfluenceTechie</div>
                     </div>
                     <button class="mobile-nav-toggle" aria-expanded="false" aria-controls=".content">
-                        <span class="hamburger-top"></span>
-                        <span class="hamburger-middle"></span>
-                        <span class="hamburger-bottom"></span>
+                        <span class="hamburger-top" aria-expanded="false"></span>
+                        <span class="hamburger-middle"aria-expanded="true"></span>
+                        <span class="hamburger-bottom"aria-expanded="true"></span>
                     </button>
                     <div class="content">
                         <ul class="content1" id="content" data-visible="false">
@@ -62,6 +62,8 @@ require_once __DIR__ . "/config/session.php";
 
                                 ?>
                             </li>
+                            <li>
+                            </li>
                             <style>
                                 li .it {
                                     width: 100px;
@@ -82,6 +84,25 @@ require_once __DIR__ . "/config/session.php";
                                 }
                             </style>
                         </ul>
+                        <a href="" class="theme"><i class="fa fa-sun-o"></i></a>
+                        <style>
+                            .theme{
+                                z-index: 999999;
+                                color: #808080;
+                                position: absolute;
+                                margin-left: 48%;
+                                margin-top: -3.4%;
+                                font-size: 20px;
+                            }
+                            @media screen and (max-width:992px) {
+                                .theme{
+                                    margin-left: 16%;
+                                    margin-top: 2%;
+                                    font-size: 22px;
+                                }
+                            }
+                        </style>
+
                     </div>
                 </div>
             </div>
@@ -93,34 +114,36 @@ require_once __DIR__ . "/config/session.php";
                 <!-- <marquee behavior="lhs" direction="lhs">This is Influence calculating Device and Exam software. When registered, you will be emailed your registration number  and note that password is a very important criterion in registration.</marquee> -->
             </div>
             <div class="previews">
-                <div class="first-row">
+                <div class="first-row shadow">
 
                 </div>
                 <div class="second-row">
-                    <div class="topics">
+                    <div class="topics shadow">
                         <div class="first-topic">
-                            <div class="density">
-                                <a href="pages/density/density.php">Density</a>
-                            </div>
-                            <div class="quadratic">
-                                <a href="pages/quadratic/quadratic.php">Quadratic Equation</a>
-                            </div>
+                            <a href="pages/density/density.php" class="density">
+                                <!-- <div class="density"> -->
+                                    Density
+                                <!-- </div> -->
+                            </a>
+                            <!-- <div class="quadratic"> -->
+                                <a href="pages/quadratic/quadratic.php" class="quadratic">Quadratic Equation</a>
+                            <!-- </div> -->
                         </div>
                         <div class="first-topic">
-                            <div class="scientific">
-                                <a href="">scientific Calculator<i class="fa fa-calculator" aria-hidden="true"></i></a>
-                            </div>
-                            <div class="standard">
-                                <a href="pages/statistics/index.php">Statistics <i class="fa fa-bar-chart" aria-hidden="true"></i></a>
-                            </div>
+                            <!-- <div class="scientific"> -->
+                                <a href="" class="scientific">Scientific Calculator<i class="fa fa-calculator" aria-hidden="true"></i></a>
+                            <!-- </div> -->
+                            <!-- <div class="standard"> -->
+                                <a href="pages/statistics/index.php" class="standard">Statistics <i class="fa fa-bar-chart" aria-hidden="true"></i></a>
+                            <!-- </div> -->
                         </div>
                         <div class="first-topic">
-                            <div class="pythagoras">
-                                <a href="">Pythagoras Theorem</a>
-                            </div>
-                            <div class="exam">
-                                <a href="pages/exam/examlogin.php">Exam quiz</a>
-                            </div>
+                            <!-- <div class="pythagoras"> -->
+                                <a href="" class="pythagoras">Pythagoras Theorem</a>
+                            <!-- </div> -->
+                            <!-- <div class="exam"> -->
+                                <a href="pages/exam/examlogin.php" class="exam">Exam quiz</a>
+                            <!-- </div> -->
                         </div>
 
 

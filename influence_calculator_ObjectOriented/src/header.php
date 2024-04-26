@@ -31,10 +31,10 @@ require_once __DIR__ . "/../config/session.php";
                         <!-- <img src="image/hacker2.jpg" class="image" alt=""> -->
                         <div class="title">InfluenceTechie</div>
                     </div>
-                    <button class="mobile-nav-toggle" aria-expanded="false" aria-controls=".content">
-                        <span class="hamburger-top"></span>
-                        <span class="hamburger-middle"></span>
-                        <span class="hamburger-bottom"></span>
+                    <button class="mobile-nav-toggle" id="mobile-toggle" aria-expanded="false" aria-controls=".content">
+                        <span class="hamburger-top" id="top" ></span>
+                        <span class="hamburger-middle" id="middle"></span>
+                        <span class="hamburger-bottom" id="bottom"></span>
                     </button>
                     <div class="content">
                         <ul class="content1" id="content" data-visible="false">

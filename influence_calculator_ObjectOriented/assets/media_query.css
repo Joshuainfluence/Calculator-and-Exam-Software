@@ -5,6 +5,7 @@
     height: 850px;
     /* flex-direction: column; */
   }
+
   .first-row {
     width: 100%;
     margin-left: 0;
@@ -12,6 +13,7 @@
     height: 400px;
     display: block;
   }
+
   .second-row {
     width: 100%;
     margin-top: 2%;
@@ -32,9 +34,11 @@
     transition: transform 350ms ease-out;
     backdrop-filter: blur(2rem);
   }
+
   .content1[data-visible="true"] {
     transform: translateX(0%);
   }
+
   .mobile-nav-toggle {
     position: absolute;
     display: block;
@@ -47,36 +51,65 @@
     right: 2rem;
     z-index: 9999;
   }
+
   .mobile-nav-toggle[aria-expanded="true"] {
-    background: green;
+    background: transparent;
   }
 
   .hamburger-top,
-    .hamburger-middle,
-    .hamburger-bottom {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 24px;
-        height: 2px;
-        background: #000;
-        transform: rotate(0);
-        transition: all 0.5s;
-    }
+  .hamburger-middle,
+  .hamburger-bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: #000;
+    transform: rotate(0);
+    transition: all 0.5s;
+  }
 
-    .hamburger-middle {
-        transform: translateY(7px);
-    }
+  /* .mobile-nav-toggle[aria-expanded="true"] .hamburger-middle {
+    transform: translateY(7px);
+  }
+
+  .mobile-nav-toggle[aria-expanded="true"] .hamburger-bottom {
+    transform: translateY(14px);
+  } */
+
+  .hamburger-middle {
+    transform: translateY(7px);
+  }
 
 
-    .hamburger-bottom {
-        transform: translateY(14px);
-    }
+  .hamburger-bottom {
+    transform: translateY(14px);
+  }
+
+  .open {
+    transform: rotate(90deg);
+    transform: translateY(0px);
+  }
+
+  .open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translate(6px);
+  }
+
+
+  .open .hamburger-middle {
+    display: none;
+  }
+
+  .open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translate(-6px);
+  }
+
 
   .logo {
     width: 100%;
     z-index: 9999;
   }
+
   .topics {
     width: 100%;
     height: auto;
@@ -85,6 +118,7 @@
     margin-top: 2rem;
     margin-left: 0;
   }
+
   .first-topic {
     width: 100%;
     /* margin-bottom: 2rem; */
@@ -92,6 +126,7 @@
     height: auto;
     /* margin-top: 100%; */
   }
+
   /* .density a {
     font-size: 15px;
   } */
@@ -110,7 +145,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   } */
 
-  .density{
+  .density {
     width: 50%;
     background: #800;
     /* margin-top: 1rem; */
@@ -124,7 +159,8 @@
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
-  .quadratic{
+
+  .quadratic {
     width: 50%;
     background: #ff0000;
     /* margin-top: 1rem; */
@@ -138,12 +174,14 @@
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
-  .quadratic a{
+
+  .quadratic a {
     text-decoration: none;
     color: white;
     font-size: 25px;
   }
-  .scientific{
+
+  .scientific {
     width: 50%;
     background: #ffa500;
     /* margin-top: 1rem; */
@@ -157,15 +195,18 @@
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
-  .scientific:hover{
-    background:#800080 ;
+
+  .scientific:hover {
+    background: #800080;
   }
-  .scientific a{
+
+  .scientific a {
     text-decoration: none;
     color: white;
     font-size: 25px;
   }
-  .standard{
+
+  .standard {
     width: 50%;
     background: #0000ff;
     /* margin-top: 1rem; */
@@ -179,12 +220,14 @@
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
-  .standard a{
+
+  .standard a {
     text-decoration: none;
     color: white;
     font-size: 25px;
   }
-  .pythagoras{
+
+  .pythagoras {
     width: 50%;
     background: #008000;
     /* margin-top: 1rem; */
@@ -198,12 +241,14 @@
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
-  .pythagoras a{
+
+  .pythagoras a {
     text-decoration: none;
     color: white;
     font-size: 25px;
   }
-  .exam{
+
+  .exam {
     width: 50%;
     background: #000;
     /* margin-top: 1rem; */
@@ -217,11 +262,13 @@
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
-  .exam a{
+
+  .exam a {
     text-decoration: none;
     color: white;
     font-size: 25px;
   }
+
   .marque {
     margin-top: 3rem;
   }

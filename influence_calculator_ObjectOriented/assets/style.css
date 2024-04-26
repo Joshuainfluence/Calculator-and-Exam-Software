@@ -5,6 +5,7 @@
 }
 .container {
   width: 100%;
+  background-color: #000;
 }
 .nav-content {
   width: 100%;
@@ -72,7 +73,7 @@ header {
   /* z-index is for the write-ups to be forward */
   z-index: 9999;
   /* box-shadow: 10px 10px 10px grey; */
-  box-shadow:0 .5rem 1rem rgba(0,0,0,.15)!important;
+  /* box-shadow:0 .5rem 1rem rgba(0,0,0,.15)!important; */
  
   border: 0px solid black;
 }
@@ -110,7 +111,7 @@ section {
     /* border-radius: 10%; */
     background: linear-gradient(red, blue, red);
     /* box-shadow: 5px 5px 5px 5px grey; */
-    box-shadow:0 .5rem 1rem rgba(0,0,0,.15)!important;
+    /* box-shadow:0 .5rem 1rem rgba(0,0,0,.15)!important; */
     filter: blur(0px);
     opacity: 100%;
     background-image: url(../image/hacker2.jpg);
@@ -124,25 +125,26 @@ section {
 .second-row{
     /* height: 400px; */
     width: 43%;
-    border: 0px solid blue;
+    border: 3px solid blue;
     margin-left: 5%;
     margin-right: 2%;
     display: flex;
     height: auto;
     margin-top: 0;
+    /* box-shadow:0 .5rem 1rem rgba(0,0,0,.15)!important; */
 }
 
 .topics{
   display: flex;
   flex-direction: column;
-  /* border: 1px solid red; */
+  border: 1px solid red;
   width: 100%;
   margin-left: 5%;
   margin-top: 0rem;
   /* justify-content: space-between; */
   background: #fff;
   /* box-shadow: -7px 7px 7px 7px grey; */
-  box-shadow:0 .5rem 1rem rgba(0,0,0,.15)!important;
+  /* box-shadow:0 .5rem 1rem rgba(0,0,0,.15)!important; */
   border-radius: 5px;
 }
 .first-topic{
@@ -152,7 +154,7 @@ section {
   /* align-items: center; */
   width: 100%;
   margin-top: 0;
-  /* border: 1px solid green; */
+  border: 1px solid green;
   
   
 }
@@ -164,16 +166,16 @@ section {
   width: 45%;
   /* border: 1px solid green; */
   background: #fff;
-  box-shadow: -10px 10px 10px 10px grey;
+  /* box-shadow:0 .5rem 1rem rgba(0,0,0,.15)!important; */
   border-radius: 5px;
   
 }
-.density a{
+.density{
   text-decoration: none;
   color: white;
   font-size: 25px;
 }
-.density{
+a .density{
   width: 50%;
   background: #800;
   /* margin-top: 1rem; */
@@ -188,7 +190,7 @@ section {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   animation: 3s density;
 }
-.quadratic{
+a .quadratic{
   width: 50%;
   background: #ff0000;
   /* margin-top: 1rem; */
@@ -208,7 +210,7 @@ section {
   color: white;
   font-size: 25px;
 }
-.scientific{
+a .scientific{
   width: 50%;
   background: #ffa500;
   /* margin-top: 1rem; */
@@ -251,8 +253,9 @@ section {
 .exam:hover{
   background:#800080 ;
   border: 1px solid #800080;
+ 
 }
-.standard{
+a .standard{
   width: 50%;
   background: #0000ff;
   /* margin-top: 1rem; */
@@ -271,7 +274,7 @@ section {
   color: white;
   font-size: 25px;
 }
-.pythagoras{
+a .pythagoras{
   width: 50%;
   background: #008000;
   /* margin-top: 1rem; */
@@ -290,7 +293,7 @@ section {
   color: white;
   font-size: 25px;
 }
-.exam{
+a .exam{
   width: 50%;
   background: #000;
   /* margin-top: 1rem; */
