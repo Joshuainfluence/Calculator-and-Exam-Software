@@ -23,7 +23,7 @@ $rows = $rows->displayProfile();
     <div class="container mt-5">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-8 offset-lg-2">
-                <div class="card border">
+                <div class="card border shadow">
                     <div class="card-header fw-bold">
                         <i class="fa fa-user"></i> EXAM
                     </div>

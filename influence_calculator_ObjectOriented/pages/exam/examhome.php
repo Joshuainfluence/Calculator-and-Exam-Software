@@ -69,16 +69,20 @@ date_default_timezone_set("Africa/Lagos");
                     foreach ($questions as $question) :
                         // $x = $_GET['id'];
                         $questionID = $question['id'];
-                        $userSelectedAnswer = isset($_SESSION['user_answers'][$questionID]) ? $_SESSION['user_answers'][$questionID] :'';
+                        $userSelectedAnswer = isset($_SESSION['user_answers'][$questionID]) ? $_SESSION['user_answers'][$questionID] : '';
 
                     ?>
-                    <h4>Question <?= $question['id']?></h4>
+                        <h4>Question <?= $question['id'] ?></h4>
 
                         <div class="form-group  align-items-center mt-3">
                             <form action="submit.php" method="POST">
                                 <? //= $time 
                                 ?>
-                                <input type="hidden" name="id" value="<?= $question['id'] ?>">
+                                <input type="hidden" name="question[<?= $questionID ?>]" value="<?= $question['question'] ?>">
+                                <input type="hidden" name="a[<?= $questionID ?>]" value="<?= $question['optionA'] ?>">
+                                <input type="hidden" name="b[<?= $questionID ?>]" value="<?= $question['optionB'] ?>">
+                                <input type="hidden" name="c[<?= $questionID ?>]" value="<?= $question['optionC'] ?>">
+                                <input type="hidden" name="d[<?= $questionID ?>]" value="<?= $question['optionD'] ?>">
 
                                 <div class="question fw-600 fs-5">
                                     <?= ucfirst($question['question']) ?>
@@ -87,19 +91,19 @@ date_default_timezone_set("Africa/Lagos");
                                     <input type="hidden" name="id" value="<?= $question['id'] ?>">
                                 </div>
                                 <div class="question fw-400 fs-5">
-                                    a. <input type="radio" name="ans[<?=$questionID?>]" id="a" value="a" <?= $userSelectedAnswer === 'a' ? 'checked' : ''?>>
+                                    a. <input type="radio" name="ans[<?= $questionID ?>]" id="a" value="a" <?= $userSelectedAnswer === 'a' ? 'checked' : '' ?>>
                                     <label for="a"><?= ucfirst($question['optionA']) ?></label>
                                 </div>
                                 <div class="question fw-400 fs-5">
-                                    b. <input type="radio" name="ans[<?= $questionID?>]" id="b" value="b" <?= $userSelectedAnswer === 'b' ? 'checked' : ''?>>
+                                    b. <input type="radio" name="ans[<?= $questionID ?>]" id="b" value="b" <?= $userSelectedAnswer === 'b' ? 'checked' : '' ?>>
                                     <label for="b"><?= ucfirst($question['optionB']) ?></label>
                                 </div>
                                 <div class="question fw-400 fs-5">
-                                    c. <input type="radio" name="ans[<?= $questionID?>]" id="c" value="c" <?= $userSelectedAnswer === 'c' ? 'checked' : ''?>>
+                                    c. <input type="radio" name="ans[<?= $questionID ?>]" id="c" value="c" <?= $userSelectedAnswer === 'c' ? 'checked' : '' ?>>
                                     <label for="c"><?= ucfirst($question['optionC']) ?></label>
                                 </div>
                                 <div class="question fw-400 fs-5">
-                                    d. <input type="radio" name="ans[<?= $questionID?>]" id="d" value="d" <?= $userSelectedAnswer === 'd' ? 'checked' : ''?>>
+                                    d. <input type="radio" name="ans[<?= $questionID ?>]" id="d" value="d" <?= $userSelectedAnswer === 'd' ? 'checked' : '' ?>>
                                     <label for="d"><?= ucfirst($question['optionD']) ?></label>
                                 </div>
                                 <!-- <div class="form-group d-flex justify-content-between mt-5 mb-2">
@@ -136,7 +140,7 @@ date_default_timezone_set("Africa/Lagos");
                                         transition: 0.3s ease-in;
                                     }
 
-                                    .col-1:hover{
+                                    .col-1:hover {
                                         background-color: red;
                                     }
 

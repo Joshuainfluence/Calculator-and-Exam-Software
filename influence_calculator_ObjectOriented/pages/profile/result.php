@@ -16,7 +16,7 @@ $rows = $rows->displayexamanswer();
 
                 <h5 class="text-muted text-center p-fixed">Dear <?= ucfirst($_SESSION['username']) ?> your result for your last exam is below</h5>
                 <div class="pdf">
-                    <a href="../pdf/index.php?id=<?= $x ?>" class="button">Print <i class="fa fa-download"></i></a>
+                    <a href="../pdf/index.php?id=<?= $x ?> " target="_blank" class="button">Print <i class="fa fa-download"></i></a>
                     <style>
                         a {
                             text-decoration: none;
