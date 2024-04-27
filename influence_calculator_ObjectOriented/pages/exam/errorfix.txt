@@ -1,0 +1,58 @@
+It seems like there are a couple of issues in your code that need to be addressed:
+
+Retaining Selected Answers: Currently, when you navigate between questions, the selected answer is not retained. To fix this, you need to modify your radio button inputs to check if the option matches the previously selected answer. You can achieve this by adding the checked attribute to the input tag when generating the HTML for each question.
+Inserting User Answers into Database: In your submit file, you are checking if $_POST['ans[]'] is set, but it seems like you intend to check if any option was selected. Also, you need to handle the array of selected answers properly. Additionally, you're comparing the user's answer to the correct answer using ===, which might not work as expected if the types are different.
+Let's address these issues:
+
+In your main file (examhome.php), modify the radio button inputs to check if they match the user's previously selected answer. You can do this by comparing the value of each option with the value stored in the session for that question. Here's how you can modify the code:
+
+php
+Copy code
+<?php
+// Inside the loop where you display questions and options
+foreach ($questions as $question) :
+    $questionID = $question['id'];
+    $userSelectedAnswer = isset($_SESSION['user_answers'][$questionID]) ? $_SESSION['user_answers'][$questionID] : '';
+
+    // Display question and options
+    // Check if each option matches the user's selected answer
+    ?>
+    <div class="question fw-400 fs-5">
+        a. <input type="radio" name="ans[<?= $questionID ?>]" id="a" value="a" <?= $userSelectedAnswer === 'a' ? 'checked' : '' ?>>
+        <label for="a"><?= ucfirst($question['optionA']) ?></label>
+    </div>
+    <!-- Repeat for other options -->
+<?php endforeach ?>
+In your submit file (submit.php), modify the way you handle user answers and compare them with the correct answers. Also, handle the array of selected answers properly:
+
+php
+Copy code
+<?php
+require_once __DIR__ . "/../../public/userexamquestion.contr.php";
+require_once __DIR__ . "/../../config/session.php";
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $userAnswers = $_POST['ans'] ?? []; // Retrieve all selected answers
+
+    foreach ($userAnswers as $questionID => $user_ans) {
+        // Fetch correct answer from the database
+        $question = new UserExamQuestionContr($questionID);
+        $correctAnswer = $question->getCorrectAnswer();
+
+        // Compare user's answer with correct answer
+        $isCorrect = ($user_ans === $correctAnswer) ? "correct" : "wrong";
+
+        // Save user's answer to session for future reference
+        $_SESSION['user_answers'][$questionID] = $user_ans;
+
+        // Now, you can insert the user's answer into the database
+        // Make sure to handle database insertion properly
+    }
+
+    // After processing all answers, redirect to result page
+    header("Location: ../profile/result.php");
+    exit(); // Terminate script execution after redirection
+}
+Make sure to adapt the database insertion part (UserAddExamAnswerContr) to properly insert the user's answers into your database.
+
+These changes should help retain the selected answers when navigating between questions and properly insert user answers into the database for comparison. Let me know if you have further questions or encounter any issues!

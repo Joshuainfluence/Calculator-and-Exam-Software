@@ -23,6 +23,13 @@ class UserExamQuestionContr extends UserExamQuestion{
 
         return $this->examanswerdisplay($this->x);
     }
+
+    public function getCorrectAnswer(){
+        if ($this->x == 0) {
+            exit();
+        }
+        return $this->answerCorrectGet($this->x);
+    }
 }
 
 class UserAddExamAnswerContr extends UserExamQuestion{

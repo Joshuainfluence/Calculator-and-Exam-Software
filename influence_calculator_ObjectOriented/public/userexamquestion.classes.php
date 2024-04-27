@@ -27,6 +27,17 @@ class UserExamQuestion extends Dbh{
         return $result;
     }
 
+    protected function answerCorrectGet($x){
+        $sql = "SELECT ans FROM mark WHERE questionId = ?";
+        $stmt = $this->connection()->prepare($sql);
+        if (!$stmt->execute([$x])) {
+            $stmt = null;
+            exit();
+        }
+
+        $reuslt = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $reuslt;
+    }
     protected function addUserAnswer($questionid, $question, $optionA, $optionB, $optionC, $optionD, $ans, $userid, $userAns, $isCorrect){
         $sql = "INSERT INTO mark(questionId, question, optionA, optionB, optionC, optionD, ans, userId, userAns, isCorrect) VALUES (:questionId, :question, :optionA, :optionB, :optionC, :optionD, :ans, :userId, :userAns, :isCorrect)";
         $stmt = $this->connection()->prepare($sql);

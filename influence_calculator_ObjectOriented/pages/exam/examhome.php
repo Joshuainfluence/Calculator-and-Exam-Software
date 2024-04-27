@@ -67,7 +67,9 @@ date_default_timezone_set("Africa/Lagos");
                     // $time = date("H:i:s");
                     // the id is set so one from the start value, which is the beginning of the counting from the database
                     foreach ($questions as $question) :
-                        $x = $_GET['id'];
+                        // $x = $_GET['id'];
+                        $questionID = $question['id'];
+                        $userSelectedAnswer = isset($_SESSION['user_answers'][$questionID]) ? $_SESSION['user_answers'][$questionID] :'';
 
                     ?>
                     <h4>Question <?= $question['id']?></h4>
@@ -85,19 +87,19 @@ date_default_timezone_set("Africa/Lagos");
                                     <input type="hidden" name="id" value="<?= $question['id'] ?>">
                                 </div>
                                 <div class="question fw-400 fs-5">
-                                    a. <input type="radio" name="ans[]" id="a" value="a">
+                                    a. <input type="radio" name="ans[<?=$questionID?>]" id="a" value="a" <?= $userSelectedAnswer === 'a' ? 'checked' : ''?>>
                                     <label for="a"><?= ucfirst($question['optionA']) ?></label>
                                 </div>
                                 <div class="question fw-400 fs-5">
-                                    b. <input type="radio" name="ans[]" id="b" value="b">
+                                    b. <input type="radio" name="ans[<?= $questionID?>]" id="b" value="b" <?= $userSelectedAnswer === 'b' ? 'checked' : ''?>>
                                     <label for="b"><?= ucfirst($question['optionB']) ?></label>
                                 </div>
                                 <div class="question fw-400 fs-5">
-                                    c. <input type="radio" name="ans[]" id="c" value="c">
+                                    c. <input type="radio" name="ans[<?= $questionID?>]" id="c" value="c" <?= $userSelectedAnswer === 'c' ? 'checked' : ''?>>
                                     <label for="c"><?= ucfirst($question['optionC']) ?></label>
                                 </div>
                                 <div class="question fw-400 fs-5">
-                                    d. <input type="radio" name="ans[]" id="d" value="d">
+                                    d. <input type="radio" name="ans[<?= $questionID?>]" id="d" value="d" <?= $userSelectedAnswer === 'd' ? 'checked' : ''?>>
                                     <label for="d"><?= ucfirst($question['optionD']) ?></label>
                                 </div>
                                 <!-- <div class="form-group d-flex justify-content-between mt-5 mb-2">
