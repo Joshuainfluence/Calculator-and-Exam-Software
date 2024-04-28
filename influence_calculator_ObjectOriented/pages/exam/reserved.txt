@@ -11,31 +11,11 @@ $_SESSION['on'] = true;
 
 require_once __DIR__ . "/../../public/userexamquestion.classes.php";
 require_once __DIR__ . "/../../public/userexamquestion.contr.php";
-// Get the current question ID from the URL parameter
-$currentQuestionID = isset($_GET['id']) ? $_GET['id'] : 1;
+$x = $_GET['id'];
+$questions = new UserExamQuestionContr($x);
+$questions = $questions->displayexamquestion();
 
-// Fetch the question data for the current question
-$question = new UserExamQuestionContr($currentQuestionID);
-$questionData = $question->displayexamquestion();
 
-// Count the total number of questions
-$totalQuestions = count($questionData);
-
-// Retrieve user's selected answer for the current question, if any
-$userSelectedAnswer = isset($_SESSION['user_answers'][$currentQuestionID]) ? $_SESSION['user_answers'][$currentQuestionID] : '';
-
-// Handle form submission when Submit button is clicked
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    // Handle answer submission and redirection to result page in submit.php
-    header("Location: submit.php");
-    exit(); // Terminate script execution after redirection
-}
-
-$totalQuestions = count($questionData);
-$navigationLinks = '';
-for ($i = 1; $i <= $totalQuestions; $i++) {
-    $navigationLinks .= "<div class='col-1'><a href='examhome.php?id=$i' class='text-light text-center'><h1>$i</h1></a></div>";
-}
 date_default_timezone_set("Africa/Lagos");
 // require_once(__DIR__ . "/previous.php");
 ?>
@@ -77,8 +57,8 @@ date_default_timezone_set("Africa/Lagos");
                 <?php endif ?>
 
                 <?php
-                $questionNumbers = count($questionData, COUNT_NORMAL);
-                if ($questionData != $questionNumbers && isset($_SESSION['on'])) {
+                $questionNumbers = count($questions, COUNT_NORMAL);
+                if ($x != $questionNumbers && isset($_SESSION['on'])) {
 
                 ?>
                     <?php
@@ -86,27 +66,24 @@ date_default_timezone_set("Africa/Lagos");
                     // if (isset($_GET['id'])) :
                     // $time = date("H:i:s");
                     // the id is set so one from the start value, which is the beginning of the counting from the database
-                    foreach ($questionData as $question) :
+                    foreach ($questions as $question) :
                         // $x = $_GET['id'];
                         $questionID = $question['id'];
                         $userSelectedAnswer = isset($_SESSION['user_answers'][$questionID]) ? $_SESSION['user_answers'][$questionID] : '';
 
                     ?>
-
-                    
-                    <?= $navigationLinks ?>
-                        <div id="timer" class="fw-400 fs-5 text-center">30m 0s</div>
-                        <h4>Question <?= $currentQuestionID ?></h4>
+                    <div id="timer" class="fw-400 fs-5 text-center">30m 0s</div>
+                        <h4>Question <?= $question['id'] ?></h4>
 
                         <div class="form-group  align-items-center mt-3">
                             <form action="submit.php" method="POST" id="examForm">
                                 <? //= $time 
                                 ?>
-                                <input type="hidden" name="question[<?= $currentQuestionID ?>]" value="<?= $question['question'] ?>">
-                                <input type="hidden" name="a[<?= $currentQuestionID ?>]" value="<?= $question['optionA'] ?>">
-                                <input type="hidden" name="b[<?= $currentQuestionID ?>]" value="<?= $question['optionB'] ?>">
-                                <input type="hidden" name="c[<?= $currentQuestionID ?>]" value="<?= $question['optionC'] ?>">
-                                <input type="hidden" name="d[<?= $currentQuestionID ?>]" value="<?= $question['optionD'] ?>">
+                                <input type="hidden" name="question[<?= $questionID ?>]" value="<?= $question['question'] ?>">
+                                <input type="hidden" name="a[<?= $questionID ?>]" value="<?= $question['optionA'] ?>">
+                                <input type="hidden" name="b[<?= $questionID ?>]" value="<?= $question['optionB'] ?>">
+                                <input type="hidden" name="c[<?= $questionID ?>]" value="<?= $question['optionC'] ?>">
+                                <input type="hidden" name="d[<?= $questionID ?>]" value="<?= $question['optionD'] ?>">
 
                                 <div class="question fw-600 fs-5">
                                     <?= ucfirst($question['question']) ?>
@@ -115,32 +92,34 @@ date_default_timezone_set("Africa/Lagos");
                                     <input type="hidden" name="id" value="<?= $question['id'] ?>">
                                 </div>
                                 <div class="question fw-400 fs-5">
-                                    a. <input type="radio" name="ans[<?= $currentQuestionID ?>]" id="a" value="a" <?= $userSelectedAnswer === 'a' ? 'checked' : '' ?>>
-                                    <label for="a"><?= ucfirst($questionData[0]['optionA']) ?></label>
+                                    a. <input type="radio" name="ans[<?= $questionID ?>]" id="a" value="a" <?= $userSelectedAnswer === 'a' ? 'checked' : '' ?>>
+                                    <label for="a"><?= ucfirst($question['optionA']) ?></label>
                                 </div>
                                 <div class="question fw-400 fs-5">
-                                    b. <input type="radio" name="ans[<?= $currentQuestionID ?>]" id="b" value="b" <?= $userSelectedAnswer === 'b' ? 'checked' : '' ?>>
-                                    <label for="b"><?= ucfirst($questionData[0]['optionB']) ?></label>
+                                    b. <input type="radio" name="ans[<?= $questionID ?>]" id="b" value="b" <?= $userSelectedAnswer === 'b' ? 'checked' : '' ?>>
+                                    <label for="b"><?= ucfirst($question['optionB']) ?></label>
                                 </div>
                                 <div class="question fw-400 fs-5">
-                                    c. <input type="radio" name="ans[<?= $currentQuestionID ?>]" id="c" value="c" <?= $userSelectedAnswer === 'c' ? 'checked' : '' ?>>
-                                    <label for="c"><?= ucfirst($questionData[0]['optionC']) ?></label>
+                                    c. <input type="radio" name="ans[<?= $questionID ?>]" id="c" value="c" <?= $userSelectedAnswer === 'c' ? 'checked' : '' ?>>
+                                    <label for="c"><?= ucfirst($question['optionC']) ?></label>
                                 </div>
                                 <div class="question fw-400 fs-5">
-                                    d. <input type="radio" name="ans[<?= $currentQuestionID ?>]" id="d" value="d" <?= $userSelectedAnswer === 'd' ? 'checked' : '' ?>>
-                                    <label for="d"><?= ucfirst($questionData[0]['optionD']) ?></label>
+                                    d. <input type="radio" name="ans[<?= $questionID ?>]" id="d" value="d" <?= $userSelectedAnswer === 'd' ? 'checked' : '' ?>>
+                                    <label for="d"><?= ucfirst($question['optionD']) ?></label>
                                 </div>
-                                
+                                <!-- <div class="form-group d-flex justify-content-between mt-5 mb-2">
+                                    <div class="action">
+                                        <input type="submit" class="btn btn-primary btn-lg" name="previous" value="Previous">
+                                        <input type="submit" class="btn btn-success btn-lg" name="next" value="Next">
+                                    </div>
+                                    <input type="submit" name="submit" class="submit btn btn-danger" value="Submit">
+                                </div> -->
 
 
                                 <div class="form-group d-flex justify-content-between mt-5 mb-2">
                                     <div class="action">
-                                        <?php if ($currentQuestionID > 1) : ?>
-                                            <a href="examhome.php?id=<?= $currentQuestionID - 1 ?>" class="btn btn-primary btn-lg">Previous</a>
-                                        <?php endif; ?>
-                                        <?php if ($currentQuestionID < 19) : ?>
-                                            <a href="examhome.php?id=<?= $currentQuestionID + 1 ?>" class="btn btn-success btn-lg">Next</a>
-                                        <?php endif; ?>
+                                        <a href="examhome.php?id=<?= $x - 1 ?>" class="btn btn-primary btn-lg" name="previous">Previous</a>
+                                        <a href="examhome.php?id=<?= $x + 1 ?>" class="btn btn-success btn-lg" name="next">Next</a>
                                     </div>
                                     <input type="submit" name="submit" class="submit btn btn-danger" value="Submit">
                                 </div>

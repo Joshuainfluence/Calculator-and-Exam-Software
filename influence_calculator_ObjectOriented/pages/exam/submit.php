@@ -30,13 +30,19 @@
 
 
 
+
+
+
+
+
+
 require_once __DIR__ . "/../../public/userexamquestion.classes.php";
 require_once __DIR__ . "/../../public/userexamquestion.contr.php";
 require_once __DIR__ . "/../../config/dbh.php";
 require_once __DIR__ . "/../../config/session.php";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $userAnswers = $_POST['ans'] ?? []; // Retrieve all selected answers
+    $userAnswers = $_POST['ans'] ?? [];
 
     foreach ($userAnswers as $questionID => $user_ans) {
         // Fetch correct answer from the database
@@ -50,15 +56,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         // Save user's answer to session for future reference
         $_SESSION['user_answers'][$questionID] = $user_ans;
 
-        // Retrieve question and options from POST data
-        $question = $_POST['question'][$questionID];
-        $optionA = $_POST['a'][$questionID];
-        $optionB = $_POST['b'][$questionID];
-        $optionC = $_POST['c'][$questionID];
-        $optionD = $_POST['d'][$questionID];
-
         // Now, you can insert the user's answer into the database
-        $insert = new UserAddExamAnswerContr($questionID, $question, $optionA, $optionB, $optionC, $optionD, $correctAnswer, $userid, $user_ans, $isCorrect);
+        $questionData = $question->displayexamquestion(); // Fetch question data
+        $questionText = $questionData[0]['question']; // Get question text from the fetched data
+        $optionA = $questionData[0]['optionA'];
+        $optionB = $questionData[0]['optionB'];
+        $optionC = $questionData[0]['optionC'];
+        $optionD = $questionData[0]['optionD'];
+
+        $insert = new UserAddExamAnswerContr($questionID, $questionText, $optionA, $optionB, $optionC, $optionD, $correctAnswer, $userid, $user_ans, $isCorrect);
         $insert->useranswerAdd();
     }
 
@@ -66,5 +72,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     header("Location: ../profile/result.php");
     exit(); // Terminate script execution after redirection
 }
-?>
+
+
+
+
+
+
 
