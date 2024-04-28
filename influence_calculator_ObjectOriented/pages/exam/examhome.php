@@ -31,9 +31,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     exit(); // Terminate script execution after redirection
 }
 
-$totalQuestions = count($questionData);
+$totalQuestions = count($questionData, COUNT_NORMAL);
 $navigationLinks = '';
-for ($i = 1; $i <= $totalQuestions; $i++) {
+for ($i = 1; $i <= 50; $i++) {
     $navigationLinks .= "<div class='col-1'><a href='examhome.php?id=$i' class='text-light text-center'><h1>$i</h1></a></div>";
 }
 date_default_timezone_set("Africa/Lagos");
@@ -93,8 +93,8 @@ date_default_timezone_set("Africa/Lagos");
 
                     ?>
 
-                    
-                    <?= $navigationLinks ?>
+
+
                         <div id="timer" class="fw-400 fs-5 text-center">30m 0s</div>
                         <h4>Question <?= $currentQuestionID ?></h4>
 
@@ -130,7 +130,7 @@ date_default_timezone_set("Africa/Lagos");
                                     d. <input type="radio" name="ans[<?= $currentQuestionID ?>]" id="d" value="d" <?= $userSelectedAnswer === 'd' ? 'checked' : '' ?>>
                                     <label for="d"><?= ucfirst($questionData[0]['optionD']) ?></label>
                                 </div>
-                                
+
 
 
                                 <div class="form-group d-flex justify-content-between mt-5 mb-2">
@@ -169,159 +169,6 @@ date_default_timezone_set("Africa/Lagos");
                                     a {
                                         text-decoration: none;
                                     }
-                                </style>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=1" class="text-light text-center">
-                                        <h1>1</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=2" class="text-light text-center">
-                                        <h1>2</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=3" class="text-light text-center">
-                                        <h1>3</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=4" class="text-light text-center">
-                                        <h1>4</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=5" class="text-light text-center">
-                                        <h1>5</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=6" class="text-light text-center">
-                                        <h1>6</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=7" class="text-light text-center">
-                                        <h1>7</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>8</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>9</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>10</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>11</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>12</h1>
-                                    </a>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 na shadow d-flex text-light">
-                                <style>
-                                    .na {
-                                        display: flex;
-                                        flex-wrap: wrap;
-                                    }
-
-                                    .col-1 {
-                                        border: 1px solid grey;
-                                    }
-                                </style>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>13</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>14</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>15</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>16</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>17</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>18</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>19</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>20</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>21</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>22</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>23</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>24</h1>
-                                    </a>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <div class="row mb-5">
-                            <div class="col-12 na shadow d-flex text-light">
-                                <style>
-                                    .na {
-                                        display: flex;
-                                        flex-wrap: wrap;
-                                    }
-
-                                    .col-1 {
-                                        border: 1px solid grey;
-                                    }
-
                                     @media screen and (max-width:992px) {
                                         .col-1 h1 {
                                             font-size: 17px;
@@ -329,71 +176,12 @@ date_default_timezone_set("Africa/Lagos");
                                         }
                                     }
                                 </style>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>25</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>26</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>27</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>28</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>29</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>30</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>31</h1>
-                                    </a>
-
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>32</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>33</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>34</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>35</h1>
-                                    </a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="examhome.php?id=8" class="text-light text-center">
-                                        <h1>36</h1>
-                                    </a>
-                                </div>
-
+                                <?= $navigationLinks ?>
 
                             </div>
                         </div>
+
+
 
                     <?php endforeach ?>
                 <?php
