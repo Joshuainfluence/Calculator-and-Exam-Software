@@ -170,7 +170,7 @@ section {
   border-radius: 5px;
   
 }
-.density{
+a .density{
   text-decoration: none;
   color: white;
   font-size: 25px;
@@ -190,7 +190,7 @@ a .density{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   animation: 3s density;
 }
-a .quadratic{
+.quadratic{
   width: 50%;
   background: #ff0000;
   /* margin-top: 1rem; */
@@ -205,7 +205,7 @@ a .quadratic{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   animation: 3s quadratic;
 }
-.quadratic a{
+.quadratic{
   text-decoration: none;
   color: white;
   font-size: 25px;
