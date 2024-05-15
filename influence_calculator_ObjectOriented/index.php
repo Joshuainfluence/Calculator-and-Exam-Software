@@ -29,8 +29,8 @@ require_once __DIR__ . "/config/session.php";
                     </div>
                     <button class="mobile-nav-toggle" aria-expanded="false" aria-controls=".content">
                         <span class="hamburger-top" aria-expanded="false"></span>
-                        <span class="hamburger-middle"aria-expanded="true"></span>
-                        <span class="hamburger-bottom"aria-expanded="true"></span>
+                        <span class="hamburger-middle" aria-expanded="true"></span>
+                        <span class="hamburger-bottom" aria-expanded="true"></span>
                     </button>
                     <div class="content">
                         <ul class="content1" id="content" data-visible="false">
@@ -84,18 +84,22 @@ require_once __DIR__ . "/config/session.php";
                                 }
                             </style>
                         </ul>
-                        <a href="" class="theme"><i class="fa fa-sun-o"></i></a>
+                        <button id="theme"><i class="fa fa-sun-o"></i></button>
                         <style>
-                            .theme{
+                            #theme {
                                 z-index: 999999;
-                                color: #808080;
+                                /* color: #808080; */
+                                color: #000;
                                 position: absolute;
                                 margin-left: 48%;
                                 margin-top: -3.4%;
                                 font-size: 20px;
+                                background: transparent;
+                                border: none;
                             }
+
                             @media screen and (max-width:992px) {
-                                .theme{
+                                #theme {
                                     margin-left: 16%;
                                     margin-top: 2%;
                                     font-size: 22px;
@@ -122,27 +126,27 @@ require_once __DIR__ . "/config/session.php";
                         <div class="first-topic">
                             <a href="pages/density/density.php" class="density">
                                 <!-- <div class="density"> -->
-                                    Density
+                                Density
                                 <!-- </div> -->
                             </a>
                             <!-- <div class="quadratic"> -->
-                                <a href="pages/quadratic/quadratic.php" class="quadratic">Quadratic Equation</a>
+                            <a href="pages/quadratic/quadratic.php" class="quadratic">Quadratic Equation</a>
                             <!-- </div> -->
                         </div>
                         <div class="first-topic">
                             <!-- <div class="scientific"> -->
-                                <a href="" class="scientific">Scientific Calculator<i class="fa fa-calculator" aria-hidden="true"></i></a>
+                            <a href="" class="scientific">Scientific Calculator<i class="fa fa-calculator" aria-hidden="true"></i></a>
                             <!-- </div> -->
                             <!-- <div class="standard"> -->
-                                <a href="pages/statistics/index.php" class="standard">Statistics <i class="fa fa-bar-chart" aria-hidden="true"></i></a>
+                            <a href="pages/statistics/index.php" class="standard">Statistics <i class="fa fa-bar-chart" aria-hidden="true"></i></a>
                             <!-- </div> -->
                         </div>
                         <div class="first-topic">
                             <!-- <div class="pythagoras"> -->
-                                <a href="" class="pythagoras">Pythagoras Theorem</a>
+                            <a href="" class="pythagoras">Pythagoras Theorem</a>
                             <!-- </div> -->
                             <!-- <div class="exam"> -->
-                                <a href="pages/exam/examlogin.php" class="exam">Exam quiz</a>
+                            <a href="pages/exam/examlogin.php" class="exam">Exam quiz</a>
                             <!-- </div> -->
                         </div>
 
@@ -153,6 +157,7 @@ require_once __DIR__ . "/config/session.php";
 
         </div>
     </section>
+    <script src="assets/theme.js"></script>
 
 </body>
 
